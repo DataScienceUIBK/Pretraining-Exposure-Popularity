@@ -1,5 +1,4 @@
-<a href=""><img src="https://img.shields.io/static/v1?label=Paper&message=ACM%20SIGIR&color=green&logo=arXiv"></a>
-<a href="https://opensource.org/license/mit"><img src="https://img.shields.io/static/v1?label=License&message=MIT&color=red"></a>
+<a href=""><img src="https://img.shields.io/static/v1?label=Paper&message=ACM%20SIGIR&color=green&logo=arXiv"></a> <a href="https://opensource.org/license/mit"><img src="https://img.shields.io/static/v1?label=License&message=MIT&color=red"></a>
 
 # Pretraining Exposure Explains Popularity Judgments in Large Language Models
 
@@ -17,103 +16,97 @@ Using fully observable pretraining data, we conduct the first large-scale analys
 
 ## 🗂 Repository Structure
 
-```id="jv5p97"
+```text
 .
 ├── comparison/        # Pairwise comparison prompting & aggregation
-│   ├── majority.py
-│   ├── merge.py
-│   ├── prompting.py
-│   └── run.sh
+│   ├── majority.py    # Majority voting over repeated pairwise judgments
+│   ├── merge.py       # Merge pairwise outputs
+│   ├── prompting.py   # Pairwise prompting pipeline
+│   └── run.sh         # Run pairwise experiments
 │
 ├── dataset/           # Full dataset with all signals
-│   └── dataset.json
+│   └── dataset.json   # Entities, metadata, exposure, pageviews, model outputs
 │
 ├── directly/          # Direct popularity estimation pipeline
-│   ├── merge.py
-│   ├── prompting.py
-│   └── run.sh
+│   ├── merge.py       # Merge repeated outputs
+│   ├── prompting.py   # Direct estimation prompting
+│   └── run.sh         # Run direct estimation
 │
-└── experiments/       # Analysis and evaluation scripts
+└── experiments/       # Evaluation and analysis
     ├── correlation.py
     └── pairwise_accuracy.py
 ```
 
----
-
 ## 📊 Dataset
 
-We provide a **fully processed dataset** containing **2,000 entities** across five types:
+We release a **fully integrated, analysis-ready dataset** that consolidates all signals used in the paper into a single resource.
 
-* Person
-* Location
-* Organization
-* Art
-* Product
+The dataset contains **2,000 entities** spanning five semantic types:
+**Person, Location, Organization, Art, and Product**.
 
-Each entity includes:
+Each entity is enriched with multiple complementary signals:
 
-* Wikidata metadata
-* Entity type
-* Validated aliases
-* Wikipedia pageviews
-* Pretraining exposure scores
-* LLM popularity signals:
+* structured knowledge (Wikidata metadata and entity type)
+* linguistic coverage (validated aliases)
+* real-world popularity (Wikipedia pageviews)
+* training-derived statistics (pretraining exposure counts)
+* model-based estimates:
 
-  * Direct estimation
-  * Pairwise comparison
+  * direct scalar popularity predictions
+  * pairwise comparison outcomes
 
-👉 The dataset is **self-contained** and enables full reproducibility of the paper results.
+Unlike typical benchmarks, this dataset is **self-contained**:
+it includes both *raw inputs and computed signals*, allowing researchers to:
 
----
+* reproduce results without rerunning expensive pipelines
+* directly study relationships between signals
+* extend the analysis to new models or ranking methods
 
 ## 🚀 Getting Started
 
 ### Setup
 
-```bash id="0199ar"
+```bash
 git clone https://github.com/DataScienceUIBK/Pretraining-exposure-popularity.git
 cd Pretraining-exposure-popularity
 pip install -r requirements.txt
 ```
 
----
-
 ## 🤖 Models
 
-We use **fully open models** available on Hugging Face (e.g., OLMo variants).
-No API keys or proprietary access are required.
+We evaluate two fully open large language models released by the Allen Institute for AI:
 
----
+* **OLMo-3-7B-Instruct**
+  https://huggingface.co/allenai/Olmo-3-7B-Instruct
+
+* **OLMo-3.1-32B-Instruct**
+  https://huggingface.co/allenai/Olmo-3.1-32B-Instruct
+
+These models are fully open and provide access to their training data, enabling direct measurement of **pretraining exposure**.
 
 ## 🧪 Running Experiments
 
 ### 🔹 Direct Estimation
 
-```bash id="1hel7v"
+```bash
 cd directly
 bash run.sh
 ```
 
----
-
 ### 🔹 Pairwise Comparison
 
-```bash id="ipre3b"
+```bash
 cd comparison
 bash run.sh
 ```
 
----
-
 ### 🔹 Analysis
 
-```bash id="gzody0"
+```bash
 cd experiments
 python correlation.py
 python pairwise_accuracy.py
 ```
-
----
 
 ## 🔁 Reproducibility
 
@@ -121,24 +114,23 @@ This repository is designed for **full reproducibility** of the reported results
 
 ### What is included
 
-* ✅ Complete dataset with all signals (exposure, Wikipedia, LLM outputs)
-* ✅ Prompting pipelines
-* ✅ Aggregation scripts
-* ✅ Evaluation scripts
+* Complete dataset with all signals (exposure, Wikipedia, LLM outputs)
+* Prompting pipelines for direct and pairwise estimation
+* Aggregation scripts (majority voting, merging)
+* Evaluation scripts (correlation and accuracy)
 
 ### Requirements
 
-* Python 3.9+
+* Python **3.11+**
 * Dependencies listed in `requirements.txt`
-* GPU recommended (optional)
+* Access to **GPT models (required for parts of the pipeline)**
+* GPU recommended for efficient inference
 
 ### Notes
 
 * Results may vary slightly due to LLM stochasticity
-* Multiple runs + aggregation used for stability
-* Models available via Hugging Face
-
----
+* Multiple runs and aggregation are used for stability
+* All evaluated models are publicly available
 
 ## 📊 Key Findings
 
@@ -147,31 +139,11 @@ This repository is designed for **full reproducibility** of the reported results
 * Pairwise comparison yields the most reliable estimates
 * Effects persist in long-tail entities
 
----
-
 ## 📄 Citation
 
-```bibtex id="i46g8u"
-@inproceedings{pretraining_exposure_popularity_2026,
-  title={Pretraining Exposure Explains Popularity Judgments in Large Language Models},
-  author={Anonymous},
-  booktitle={SIGIR 2026},
-  year={2026}
-}
+```bibtex
 ```
-
-📌 **Camera-ready citation (with author names) coming soon.**
-
----
 
 ## 📜 License
 
 MIT License — see `LICENSE`.
-
----
-
-## 📬 Contact
-
-Open an issue for questions or feedback.
-
----
