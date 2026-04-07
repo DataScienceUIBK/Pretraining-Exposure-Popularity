@@ -1,0 +1,6 @@
+torch
+transformers
+tenacity
+pandas
+scipy
+matplotlib
