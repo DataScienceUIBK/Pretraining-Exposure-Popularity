@@ -67,8 +67,8 @@ it includes both *raw inputs and computed signals*, allowing researchers to:
 ### Setup
 
 ```bash
-git clone https://github.com/DataScienceUIBK/Pretraining-exposure-popularity.git
-cd Pretraining-exposure-popularity
+git clone https://github.com/DataScienceUIBK/Pretraining-Exposure-Popularity.git
+cd Pretraining-Exposure-Popularity
 pip install -r requirements.txt
 ```
 
