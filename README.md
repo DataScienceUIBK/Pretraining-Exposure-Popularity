@@ -1,17 +1,9 @@
+<a href=""><img src="https://img.shields.io/static/v1?label=Paper&message=ACM%20SIGIR&color=green&logo=arXiv"></a>
+<a href="https://opensource.org/license/mit"><img src="https://img.shields.io/static/v1?label=License&message=MIT&color=red"></a>
+
 # Pretraining Exposure Explains Popularity Judgments in Large Language Models
 
 > *Why do LLMs think something is popular? Mostly because of how often they saw it during training.*
-
-[![Conference](https://img.shields.io/badge/SIGIR-2026-blue)]()
-[![Paper](https://img.shields.io/badge/Paper-SIGIR%202026-green)]()
-[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-
-Official repository for the **SIGIR 2026** paper:
-**“Pretraining Exposure Explains Popularity Judgments in Large Language Models”**
-
-🔗 https://github.com/DataScienceUIBK/Pretraining-exposure-popularity
-
----
 
 ## 📌 Overview
 
@@ -22,8 +14,6 @@ Using fully observable pretraining data, we conduct the first large-scale analys
 * **Pretraining exposure**
 * **Wikipedia popularity**
 * **LLM-generated popularity judgments**
-
----
 
 ## 🗂 Repository Structure
 
