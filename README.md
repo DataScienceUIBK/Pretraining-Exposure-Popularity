@@ -1,4 +1,4 @@
-<a href=""><img src="https://img.shields.io/static/v1?label=Paper&message=ACM%20SIGIR&color=green&logo=arXiv"></a> <a href="https://opensource.org/license/mit"><img src="https://img.shields.io/static/v1?label=License&message=MIT&color=red"></a>
+<a href="https://doi.org/10.1145/3805712.3809958"><img src="https://img.shields.io/static/v1?label=Paper&message=ACM%20SIGIR&color=green&logo=arXiv"></a> <a href="https://opensource.org/license/mit"><img src="https://img.shields.io/static/v1?label=License&message=MIT&color=red"></a>
 
 # Pretraining Exposure Explains Popularity Judgments in Large Language Models
 
@@ -142,6 +142,22 @@ This repository is designed for **full reproducibility** of the reported results
 ## 📄 Citation
 
 ```bibtex
+@inproceedings{10.1145/3805712.3809958,
+    author = {Mozafari, Jamshid and Piryani, Bhawna and Jatowt, Adam},
+    title = {Pretraining Exposure Explains Popularity Judgments in Large Language Models},
+    year = {2026},
+    isbn = {9798400725999},
+    publisher = {Association for Computing Machinery},
+    address = {New York, NY, USA},
+    url = {https://doi.org/10.1145/3805712.3809958},
+    doi = {10.1145/3805712.3809958},
+    booktitle = {Proceedings of the 49th International ACM SIGIR Conference on Research and Development in Information Retrieval},
+    pages = {4016–4021},
+    numpages = {6},
+    keywords = {large language models, popularity bias, pretraining exposure, entity popularity, ranking evaluation, bias analysis},
+    location = {Australia},
+    series = {SIGIR '26}
+}
 ```
 
 ## 📜 License
